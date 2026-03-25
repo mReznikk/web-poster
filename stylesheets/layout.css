@@ -32,7 +32,7 @@ body {
     width: 1440px;
     height: 262px;
     z-index: 2;
-    position: absolute;
+    position: relative;
 
 }
 .main {
@@ -52,4 +52,15 @@ body {
     font-size: 40px;
     text-align: center;
     margin-top: -35px;
+}
+.line-1 {
+    width:100%;
+    height:15px; 
+    background: #8E8F7B;
+    margin-top: 54px;
+}
+.line-2 {
+    width:100%;
+    height:15px; 
+    background: #2D2F19;
 }
