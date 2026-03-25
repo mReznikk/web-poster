@@ -11,3 +11,24 @@ body {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+.bg-image {
+    height: 400vw;
+     width: 100%;
+    margin: 0 auto;
+    background-image: url("./../images/layout.png");
+    opacity: 0.3; 
+    z-index: -1;
+    position: fixed;
+}
+.main {
+    z-index: 1;
+    position: relative;
+}
+.title {
+    color: white;
+    font-size: 200px;
+}
+.title-small {
+    color: white;
+    font-size: 40px;
+}
