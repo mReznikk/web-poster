@@ -6,11 +6,21 @@ body {
     width: 100%;
     margin: 0 auto;
     background-color: black;
-    font-family: '', '';
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
     overflow-x: hidden;
+}
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 500vw;
+  background-image: url("../images/layout.png");
+  opacity: 0.2;
+  z-index: -1;
 }
 
 .tiny5-regular {
@@ -19,22 +29,11 @@ body {
     font-style: normal;
 }
 
-.bg-image {
-    height: 400vw;
-    width: 100%;
-    margin: 0 auto;
-    background-image: url("./../images/layout.png");
-    opacity: 0.3;
-    z-index: -1;
-    position: fixed;
-}
-
 .section1 {
     margin: 0 auto;
     width: 100%;
-    height: 262px;
+    height: 18vw;
     position: relative;
-
 }
 
 .main {
@@ -61,7 +60,6 @@ body {
     margin: 0 auto;
     position: relative;
     width: 100%;
-
 }
 
 .line-1 {
@@ -79,72 +77,127 @@ body {
 
 .background-sec-2 {
     margin: 0 auto;
-    width: 100%;
-    height: 603px;
+    height: 42vw;
     background-image: url("./../images/backgroundsec2.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    display: flex;
+    gap: 6vw;
+    padding: 6vw 4vw;
 }
-
-.bnt {
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
+.buttons button {
+ background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+}
+.btn {
+   width: 100%;
+}
+.lamp-icons {
+    display: flex;
+    gap: 6vw;
 }
 
 .screen {
     width: 100%;
-    height: 525px;
+    height: 40vw;
     background-image: url("./../images/screenbg.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+}
+
+.camera-view {
+    justify-content: center;
+    width: 51vw;
+    height: 29vw;
 }
 
 .background-sec-3 {
-    width: 1280px;
-    height: 735px;
+    width: 89vw;
+    height: 51vw;
     background-image: url("./../images/backgroundsec3.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     left: 5px;
 }
 
 .player {
-    width: 1220px;
-    height: 596px;
+    width: 85vw;
+    height: 41vw;
     background-color: #8E8F7B;
-    border: 4px solid black
+    border: 4px solid black;
 }
 
 .background-sec-4 {
     width: 100%;
-    height: 206px;
+    height: 14vw;
     background-image: url("./../images/wavebackground.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
+
+.disk-block {
+    width: 39vw;
+    height: 39vw;
+    background-color: #61624F;
+    border: 2px solid black;
+    position: relative;
+}
+
+.disk-block::after {
+    content: "";
+    position: absolute;
+    width: 39vw;
+    height: 39vw;
+    border: 2px solid white;
+}
+
 .background-sec-5 {
-    width: 1352px;
-    height: 938px;
+    width: 94vw;
+    height: 65vw;
     background-image: url("./../images/backgroundsec5.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
+
+.id-image {
+    width: 36vw;
+    height: 52vw;
+    background-color: #2D2F19;
+    border: 6px solid #8E8F7B;
+}
+
+.screen-2 {
+    width: 30vw;
+    height: 45vw;
+    background-color: #2D2F19;
+    border: 6px solid #8E8F7B;
+}
+
+.progress-bar {
+    width: 7vw;
+    height: 62vw;
+    background-color: #000;
+}
+
 .puzzle {
     width: 100%;
     height: auto;
-    background-image: url("./../images/puzzleFrame.png");
+    background-image: url("../images/puzzleFrame.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
+
 .yellow-tape {
-    background-image: url("./../images/yellowtape.png");
+    background-image: url("../images/yellowtape.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
+
 .grid {
-    background-image: url("./../images/grid.png");
+    background-image: url("../images/grid.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
