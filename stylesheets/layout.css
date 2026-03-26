@@ -57,10 +57,24 @@ body {
     width:100%;
     height:15px; 
     background: #8E8F7B;
-    margin-top: 54px;
+    margin-top: 55px;
 }
 .line-2 {
     width:100%;
     height:15px; 
     background: #2D2F19;
+}
+.background-sec-2 {
+    width: 1280px;
+    height:603px; 
+    background-image: url("./../images/backgroundsec2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.screen {
+     width: 890px;
+    height:525px; 
+    background-image: url("./../images/screenbg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
 }
