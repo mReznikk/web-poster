@@ -21,7 +21,7 @@ body::after {
     top: 0;
     left: 0;
     width: 100%;
-    height: 5000px;
+    height: 9000px;
     background-image: url("../images/layout.png");
     opacity: 0.2;
     z-index: -2;
