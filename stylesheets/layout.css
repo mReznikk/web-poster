@@ -87,14 +87,12 @@ body {
     position: absolute;
     margin: 0 auto;
     height: 46vw;
-    padding: 6vw 4vw;
-    padding-left: 2vw;
 }
 .background-image-sec-2 {
     height: 47vw;
     width: 100%;
-    padding-left: 5vw;
-}
+    padding-left: 3vw;
+    padding-bottom: 1.5vw;}
 .screen {
     display: flex;
     width: 62vw;
