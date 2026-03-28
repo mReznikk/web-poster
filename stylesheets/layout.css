@@ -109,18 +109,25 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: center;
-    top: 7vw;
-    left: 7vw;
 }
 
-.frame {
+.screen-cctv-base {
     width: 51vw;
     height: 29vw;
-    background-image: url(/images/camera1.png);
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 3.5vw;
+    margin-right: 2vw;
 }
-
+.screen-cctv-image-1 {
+    background-image: url(/images/section2/camera1.png);
+}
+.screen-cctv-image-2 {
+    background-image: url(/images/section2/camera2.png); 
+}
+.screen-cctv-image-3 {
+    background-image: url(/images/section2/camera3.png); 
+}
 .buttons {
     display: flex;
     flex-direction: column;
