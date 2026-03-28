@@ -119,15 +119,19 @@ body {
     margin-top: 3.5vw;
     margin-right: 2vw;
 }
+
 .screen-cctv-image-1 {
     background-image: url(/images/section2/camera1.png);
 }
+
 .screen-cctv-image-2 {
-    background-image: url(/images/section2/camera2.png); 
+    background-image: url(/images/section2/camera2.png);
 }
+
 .screen-cctv-image-3 {
-    background-image: url(/images/section2/camera3.png); 
+    background-image: url(/images/section2/camera3.png);
 }
+
 .buttons {
     display: flex;
     flex-direction: column;
