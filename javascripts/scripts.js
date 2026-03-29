@@ -34,7 +34,6 @@ if (lampOn && lampOff && cctvScreen) {
         cctvScreen.className = 'section2-screen-cctv-base section2-screen-cctv-image-' + randomNumber;
     });
 }
-
 /* for cd spinning*/
 const cdDisk = document.querySelector('.cd-disk');
 if (cdDisk) {
@@ -60,15 +59,14 @@ if (btnSoundOff) {
     });
 }
 /* for running line controller */
-
 var track = document.querySelector('.wave-ruler'); /* TKTK */
 const thumb = document.getElementById('sliderButton');
 const spectrograms = document.querySelectorAll('.spectrogram-img');
 
 const stages = [
-    { pos: '0%', img: '/images/section4/spectrogramGreen.svg' },
-    { pos: '48%', img: '/images/section4/spectrogramYellow.svg' },
-    { pos: '96%', img: '/images/section4/spectrogramRed.svg' },
+    { pos: '0%', img: './images/section4/spectrogramGreen.svg' },
+    { pos: '48%', img: './images/section4/spectrogramYellow.svg' },
+    { pos: '96%', img: './images/section4/spectrogramRed.svg' },
 ];
 
 if (track) {
@@ -83,11 +81,9 @@ if (track) {
         else stage = stages[2];
 
         spectrograms.forEach(function (img) { img.src = stage.img; });
-        thumb.style.marginLeft = clickX + 'px'; /* TKTK */
+        thumb.style.marginLeft = clickX + 'px';
     });
 }
-
-
 
 if (track) {
     track.addEventListener('click', (e) => {
@@ -122,12 +118,11 @@ if (radarX && radarY && radarSweep && radarEl) {
         radarSweep.style.transform = 'rotate(' + angle + 'deg)';
     });
 }
-
 /* for LED indicators random update */
 var ledImg = document.querySelector('.section5-led-display img');
 var ledSources = [
-    '/images/section5/groupButtonsRed.svg',
-    '/images/section5/groupButtonsGreen.svg'
+    './images/section5/groupButtonsRed.svg',
+    './images/section5/groupButtonsGreen.svg'
 ];
 
 if (ledImg) {
@@ -147,7 +142,6 @@ if (progressBar) {
     });
 }
 /* for puzzle */
-
 function dragAndDropPuzzle() {
     var puzzles = document.querySelectorAll('.puzzle')
     var drops = document.querySelectorAll('.puzzle-drop div')
@@ -167,8 +161,7 @@ function dragAndDropPuzzle() {
             btn.style.display = 'block'
         }
     }
-
-    /* desktop drag */
+/* desktop drag */
     puzzles.forEach(function (p) {
         p.addEventListener('dragstart', function (e) {
             e.dataTransfer.setData('text/plain', e.target.classList[1])
@@ -182,7 +175,7 @@ function dragAndDropPuzzle() {
         })
     })
 
-    /* touch support */
+/* touch */
     puzzles.forEach(function (p) {
         p.addEventListener('touchstart', function (e) {
             draggedClass = e.target.classList[1]

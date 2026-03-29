@@ -70,7 +70,6 @@
     display: flex;
     gap: 2vw;
     justify-content: space-between;
-
 }
 
 .section5-lamp-icons img {
@@ -80,7 +79,7 @@
 
 .section5-progress-bar {
     width: 7.4vw;
-    height: 59.4vw;
+    height: 61.4vw;
     background-color: #000;
     display: flex;
     margin-left: 87.5vw;
