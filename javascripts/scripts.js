@@ -36,7 +36,9 @@ track.addEventListener('click', (e) => {
     else stage = stages[2];
 
     console.log('stage:', stage);
+    console.log("thumb style left = "+ thumb.style.left);
 
-    thumb.style.left = stage.pos;
     spectrograms.forEach(img => img.src = stage.img);
+    spectrograms.forEach(img => console.log(img.src));
+
 });

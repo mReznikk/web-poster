@@ -299,11 +299,6 @@ body {
     width: auto;
 }
 
-@keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-}
-
 .wave-ruler {
     position: relative;
     width: 100%;
@@ -311,11 +306,14 @@ body {
     cursor: pointer;
     z-index: 2;
 }
-
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
 .slider-button {
-    position: absolute;
-    left: 0%;
-    top: 0;              
+    position: absolute; 
+    margin-top: 2vw;
+    margin-left: 7vw;           
     transition: left 0.3s ease;
     z-index: 2;
 }
@@ -325,12 +323,33 @@ body {
     height: 4vw;
 }
 
-/* .background-sec-5 {
-    width: 94vw;
-    height: 65vw;
-    background-image: url("./../images/backgroundsec5.png");
+.section5 {
+    width: 100%;
+    height: 80vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; 
+    padding-top: 7.5vw;        
+}
+
+.background-section-5 {
+    width: 99vw;
+    height: 64vw;
+    background-image: url("/images/section5/backgroundsec5.png");
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 4vw 3vw;
+    gap: 3vw;
+    margin-left: auto;
+}
+
+.screen-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
 }
 
 .id-image {
@@ -353,7 +372,13 @@ body {
     background-color: #000;
 }
 
-.puzzle {
+.group-buttons-sec-5 {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    align-items: center;
+}
+/* .puzzle {
     width: 100%;
     height: auto;
     background-image: url("../images/puzzleFrame.png");
@@ -375,4 +400,4 @@ body {
     background-image: url("../images/grid.png");
     background-repeat: no-repeat;
     background-size: cover;
-} */ 
+} */
