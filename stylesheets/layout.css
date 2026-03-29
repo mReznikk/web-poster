@@ -60,15 +60,6 @@ body {
     text-align: center;
     margin-top: -2.5vw;
 }
-
-.section2 {
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    height: 46vw;
-    display: flex;
-}
-
 .line-1 {
     width: 100%;
     height: 1vw;
@@ -82,12 +73,21 @@ body {
     background: #2D2F19;
 }
 
+.section2 {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 46vw;
+    display: flex;
+}
+
 .section2-box {
     display: flex;
     margin: 0 auto;
     height: 46vw;
     padding-top: 7.5vw;
     padding-left: 3vw;
+    gap: 3vw;
 }
 
 .background-image-sec-2 {
@@ -131,6 +131,9 @@ body {
 .screen-cctv-image-3 {
     background-image: url(/images/section2/camera3.png);
 }
+.screen-cctv-image-4 {
+    background-image: url(/images/section2/camera4.png);
+}
 
 .buttons {
     display: flex;
@@ -158,56 +161,128 @@ body {
     justify-content: space-between;
 
 }
-
-.camera-view {
-    justify-content: center;
-    width: 51vw;
-    height: 29vw;
-}
-
-/* .background-sec-3 {
+.section3 {
     margin: 0 auto;
-    height: 51vw;
-    background-image: url("./../images/backgroundsec3.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 52vw;
     display: flex;
-    padding: 6vw 4vw;
-    padding-left: 2vw;
 }
-
+.background-sec-3 {
+    height: 52vw;
+    width: 100%;
+    background-image: url(/images/section3/backgroundsec3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 2vw;
+    display: flex;
+    justify-content: center;
+}
 .player {
-    width: 85vw;
+    width: 84vw;
     height: 41vw;
     background-color: #8E8F7B;
     border: 0.2vw solid black;
+    margin: 5vw;
+    margin-left: 3vw;
+    display: flex;       
+    align-items: center; 
+    flex-direction: row; 
+    gap: 5vw;  
 }
-
-.background-sec-4 {
-    width: 100%;
-    height: 14vw;
-    background-image: url("./../images/wavebackground.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .disk-block {
-    width: 39vw;
-    height: 39vw;
-    background-color: #61624F;
-    border: 0.1vw solid black;
+    width: 36vw;
+    height: 36vw;
     position: relative;
+    background-color: #61624F;
+    border: 0.3vw solid black;
+    position: relative;
+    margin-top: 2vw;
 }
-
+.cd-disk {
+    height: 35vw;
+    width: 35vw;
+    background-image: url(/images/section3/CD.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 .disk-block::after {
     content: "";
     position: absolute;
-    width: 39vw;
-    height: 39vw;
+    width: 35.4vw;
+    height: 35.4vw;
+    top: 0;
+    bottom: 0;
     border: 0.1vw solid white;
 }
 
-.background-sec-5 {
+.buttons-player button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+}
+.dynamic-1 {
+    width: 35vw;
+    height: 1vw;
+    background: #0b101d;
+}
+.dynamic-2 {
+    width: 35vw;
+    height: 1vw;
+    background: #0b101d;
+    margin-top: 2vw;
+}
+.dynamic-3 {
+    width: 35vw;
+    height: 1vw;
+    background: #0b101d;
+    margin-top: 2vw;
+}
+.background-sec-4 {
+    width: 100%;
+    height: 14vw;
+    position: relative;
+    padding-top: 1vw;
+}
+.background-sec-4::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/section4/wavebackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    pointer-events: none; 
+    z-index: 1; 
+}
+.wave-line {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 2vw;
+}
+
+.wave-track {
+    display: flex;
+    gap: 1vw;
+    animation: marquee 10s linear infinite;
+}
+
+.wave-track img {
+    height: 4vw; 
+    width: auto;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+
+/* .background-sec-5 {
     width: 94vw;
     height: 65vw;
     background-image: url("./../images/backgroundsec5.png");
@@ -257,4 +332,4 @@ body {
     background-image: url("../images/grid.png");
     background-repeat: no-repeat;
     background-size: cover;
-} */
+} */ 
