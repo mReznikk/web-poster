@@ -6,6 +6,35 @@ if (cctv) {
         cctv.className = `section2-screen-cctv-base section2-screen-cctv-image-${randomNumber}`;
     });
 }
+/* for lamps */
+var colorButtons = document.querySelectorAll('.section2-group-buttons img');
+colorButtons.forEach(function (btn) {
+    var offSrc = btn.src;
+    var onSrc = offSrc.replace('Off.svg', 'On.svg');
+
+    btn.addEventListener('mouseenter', function () {
+        btn.src = onSrc;
+    });
+    btn.addEventListener('mouseleave', function () {
+        btn.src = offSrc;
+    });
+});
+var lampOn = document.querySelector('.section2-lamp-icons div:first-child');
+var lampOff = document.querySelector('.section2-lamp-icons div:last-child');
+var cctvScreen = document.getElementById('section2-screen-cctv');
+
+if (lampOn && lampOff && cctvScreen) {
+    lampOff.addEventListener('click', function () {
+        cctvScreen.className = 'section2-screen-cctv-base';
+        cctvScreen.style.background = '#000';
+    });
+    lampOn.addEventListener('click', function () {
+        cctvScreen.style.background = '';
+        var randomNumber = Math.floor(Math.random() * 4) + 1;
+        cctvScreen.className = 'section2-screen-cctv-base section2-screen-cctv-image-' + randomNumber;
+    });
+}
+
 /* for cd spinning*/
 const cdDisk = document.querySelector('.cd-disk');
 if (cdDisk) {
@@ -14,7 +43,7 @@ if (cdDisk) {
     });
 }
 /* music*/
-var music = new Audio('/images/section3/sound.mp3');
+var music = new Audio('/sounds/sound.mp3');
 
 var btnSoundOn = document.querySelector('.btn-sound-on');
 if (btnSoundOn) {
