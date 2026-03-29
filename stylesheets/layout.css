@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    outline: 1px solid red !important;
+    /* outline: 1px solid red !important; */
 }
 
 body {
@@ -18,21 +18,6 @@ body {
     background-size: 100% auto;
     z-index: -2;
 }
-
-/* body::after {
-    content: '';
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: top;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url("../images/layout.png");
-    opacity: 0.2;
-    z-index: -2;
-} */
 
 .tiny5-regular {
     font-family: "Tiny5", sans-serif;
@@ -296,91 +281,12 @@ body {
     padding-top: 7.5vw;
 }
 
-/* .background-section-5 {
-    width: 99vw;
-    height: 64vw;
-    background-image: url("/images/section5/backgroundsec5.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 2vw 3vw;
-    gap: 3vw;
-    margin-left: auto;
-} */
 .section5-box {
     display: flex;
     margin: 0 auto;
     height: 90vw;
     gap: 3vw;
 }
-
-/* 
-.section5-background-image {
-    height: 64vw;
-    width: 99vw;
-    padding-left: 3vw;
-    padding-bottom: 1.5vw;
-}
-
-.section5-box-internal {
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-}
-
-.id-image {
-    width: 36vw;
-    height: 52vw;
-    background-color: #2D2F19;
-    border: 6px solid #8E8F7B;
-}
-
-.screen-2 {
-    width: 30vw;
-    height: 45vw;
-    background-color: #2D2F19;
-    border: 0.4vw solid #8E8F7B;
-}
-
-.progress-bar {
-    width: 7.4vw;
-    height: 61vw;
-    background-color: #000;
-    display: flex;
-    margin-left: 13vw;
-}
-
-.group-buttons-sec-5 {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5vw;
-    align-items: center;
-} */
-/* .puzzle {
-    width: 100%;
-    height: auto;
-    background-image: url("../images/puzzleFrame.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.yellow-tape {
-    width: 100%;
-    height: 4vw;
-    background-image: url("../images/yellowtape.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.grid {
-    width: 100%;
-    height: 44vw;
-    background-image: url("../images/grid.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
 
 .section7 {
     margin: 0 auto;

@@ -149,38 +149,67 @@ if (progressBar) {
 /* for puzzle */
 
 function dragAndDropPuzzle() {
-    const puzzle = document.querySelectorAll('.puzzle')
-    const drops = document.querySelectorAll('.puzzle-drop div')
-    const btn = document.querySelector('.drop-play-button')
-    let cnt = 0
+    var puzzles = document.querySelectorAll('.puzzle')
+    var drops = document.querySelectorAll('.puzzle-drop div')
+    var btn = document.querySelector('.drop-play-button')
+    var cnt = 0
+    var draggedClass = null
 
-    puzzle.forEach((puzzle) => {
-        puzzle.addEventListener('dragstart touchstart', (event) => {
-            event.dataTransfer.setData('text/plain', event.target.classList[1])
+    function handleDrop(puzzleClass) {
+        var dropClass = puzzleClass.replace('puzzle', 'drop')
+        var drop = document.querySelector('.' + dropClass)
+        var drag = document.querySelector('.' + puzzleClass)
+        if (!drop || !drag) return
+        drop.classList.add('image')
+        drag.style.display = 'none'
+        cnt++
+        if (cnt == 6) {
+            btn.style.display = 'block'
+        }
+    }
+
+    /* desktop drag */
+    puzzles.forEach(function (p) {
+        p.addEventListener('dragstart', function (e) {
+            e.dataTransfer.setData('text/plain', e.target.classList[1])
         })
     })
-    drops.forEach((container) => {
-        container.addEventListener('dragover touchmove', (event) => {
-            event.preventDefault()
+    drops.forEach(function (container) {
+        container.addEventListener('dragover', function (e) { e.preventDefault() })
+        container.addEventListener('drop', function (e) {
+            e.preventDefault()
+            handleDrop(e.dataTransfer.getData('text/plain'))
         })
-        container.addEventListener('drop touchend', (event) => {
-            event.preventDefault()
-            const puzzleClass = event.dataTransfer.getData('text/plain')
-            const dropClass = puzzleClass.replace('puzzle', 'drop')
-            const drop = document.querySelector(`.${dropClass}`)
-            const drag = document.querySelector(`.${puzzleClass}`)
+    })
 
-            drop.classList.add('image')
-            drag.style.display = 'none'
-            cnt++
-
-            if (cnt == 6) {
-                btn.style.display = 'block'
+    /* touch support */
+    puzzles.forEach(function (p) {
+        p.addEventListener('touchstart', function (e) {
+            draggedClass = e.target.classList[1]
+        })
+        p.addEventListener('touchmove', function (e) {
+            e.preventDefault()
+            var touch = e.touches[0]
+            p.style.position = 'fixed'
+            p.style.zIndex = '9999'
+            p.style.left = (touch.clientX - p.offsetWidth / 2) + 'px'
+            p.style.top = (touch.clientY - p.offsetHeight / 2) + 'px'
+        }, { passive: false })
+        p.addEventListener('touchend', function (e) {
+            p.style.position = ''
+            p.style.zIndex = ''
+            p.style.left = ''
+            p.style.top = ''
+            if (!draggedClass) return
+            var touch = e.changedTouches[0]
+            var el = document.elementFromPoint(touch.clientX, touch.clientY)
+            if (el && el.closest('.puzzle-drop')) {
+                handleDrop(draggedClass)
             }
+            draggedClass = null
         })
     })
 }
-
 dragAndDropPuzzle();
 
 const sprite = document.querySelector('.sprite-animation');
