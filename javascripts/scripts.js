@@ -41,6 +41,20 @@ if (cdDisk) {
         cdDisk.classList.toggle('spinning');
     });
 }
+/* play/stop buttons*/
+const playBtn = document.querySelector('.btn-play img');
+let isPlaying = false;
+
+playBtn.addEventListener('click', () => {
+    isPlaying = !isPlaying;
+    playBtn.src = isPlaying 
+        ? './images/section3/pauseButton.svg' 
+        : './images/section3/playButton.svg';
+    
+    // Toggle CD spin
+    document.querySelector('.cd-disk').classList.toggle('spinning', isPlaying);
+});
+
 /* music*/
 var music = new Audio('/sounds/sound.mp3');
 

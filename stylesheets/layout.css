@@ -139,13 +139,6 @@ body {
 .buttons-player {
     display: flex;
     justify-content: space-between;
-}
-
-.buttons-player button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 0;
     cursor: pointer;
 }
 
