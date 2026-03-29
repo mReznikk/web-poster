@@ -13,9 +13,26 @@ if (cdDisk) {
         cdDisk.classList.toggle('spinning');
     });
 }
+/* music*/
+var music = new Audio('/images/section3/sound.mp3');
 
+var btnSoundOn = document.querySelector('.btn-sound-on');
+if (btnSoundOn) {
+    btnSoundOn.addEventListener('click', function () {
+        music.play();
+    });
+}
+
+var btnSoundOff = document.querySelector('.btn-sound-off');
+if (btnSoundOff) {
+    btnSoundOff.addEventListener('click', function () {
+        music.pause();
+        music.currentTime = 0;
+    });
+}
 /* for running line controller */
-const track = document.getElementById('sliderTrack');
+
+var track = document.querySelector('.wave-ruler'); /* TKTK */
 const thumb = document.getElementById('sliderButton');
 const spectrograms = document.querySelectorAll('.spectrogram-img');
 
@@ -24,6 +41,24 @@ const stages = [
     { pos: '48%', img: '/images/section4/spectrogramYellow.svg' },
     { pos: '96%', img: '/images/section4/spectrogramRed.svg' },
 ];
+
+if (track) {
+    track.addEventListener('click', function (e) {
+        var rect = track.getBoundingClientRect();
+        var clickX = e.clientX - rect.left;
+        var ratio = clickX / rect.width;
+
+        var stage;
+        if (ratio < 0.33) stage = stages[0];
+        else if (ratio < 0.66) stage = stages[1];
+        else stage = stages[2];
+
+        spectrograms.forEach(function (img) { img.src = stage.img; });
+        thumb.style.marginLeft = clickX + 'px'; /* TKTK */
+    });
+}
+
+
 
 if (track) {
     track.addEventListener('click', (e) => {
@@ -40,10 +75,43 @@ if (track) {
     });
 }
 
+/* for radar coordinates and sweep */
+var radarX = document.getElementById('section5-radar-number1');
+var radarY = document.getElementById('section5-radar-number2');
+var radarSweep = document.querySelector('.section5-radar-sweep');
+var radarEl = document.querySelector('.section5-radar');
+
+if (radarX && radarY && radarSweep && radarEl) {
+    document.addEventListener('mousemove', function (e) {
+        radarX.textContent = 'X:' + String(Math.floor(e.clientX)).padStart(4, '0');
+        radarY.textContent = 'Y:' + String(Math.floor(e.clientY)).padStart(4, '0');
+
+        var rect = radarEl.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        var angle = Math.atan2(e.clientY - cy, e.clientX - cx) * (180 / Math.PI) + 90;
+        radarSweep.style.transform = 'rotate(' + angle + 'deg)';
+    });
+}
+
+/* for LED indicators random update */
+var ledImg = document.querySelector('.section5-led-display img');
+var ledSources = [
+    '/images/section5/groupButtonsRed.svg',
+    '/images/section5/groupButtonsGreen.svg'
+];
+
+if (ledImg) {
+    setInterval(function () {
+        var randomIndex = Math.floor(Math.random() * 2);
+        ledImg.src = ledSources[randomIndex];
+    }, 1000);
+}
+
 /* for progress bar */
-const progressBar = document.querySelector('.section5-progress-bar');
+var progressBar = document.querySelector('.section5-progress-bar');
 if (progressBar) {
-    progressBar.addEventListener('click', () => {
+    progressBar.addEventListener('click', function () {
         progressBar.classList.remove('active');
         void progressBar.offsetWidth;
         progressBar.classList.add('active');
