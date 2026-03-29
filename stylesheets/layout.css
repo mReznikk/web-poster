@@ -85,8 +85,6 @@ body {
     display: flex;
     margin: 0 auto;
     height: 46vw;
-    padding-top: 7.5vw;
-    padding-left: 3vw;
     gap: 3vw;
 }
 
@@ -135,6 +133,12 @@ body {
     background-image: url(/images/section2/camera4.png);
 }
 
+.section2-box-internal {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    gap: 3vw;
+}
 .buttons {
     display: flex;
     flex-direction: column;
@@ -196,8 +200,6 @@ body {
     position: relative;
     background-color: #61624F;
     border: 0.3vw solid black;
-    position: relative;
-    margin-top: 2vw;
 }
 .cd-disk {
     height: 35vw;
@@ -215,7 +217,10 @@ body {
     bottom: 0;
     border: 0.1vw solid white;
 }
-
+.buttons-player {
+    display: flex;
+    justify-content: space-between;
+}
 .buttons-player button {
     background-color: transparent;
     border: none;
@@ -223,20 +228,26 @@ body {
     padding: 0;
     cursor: pointer;
 }
+.section3-buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6vw;
+    padding-left: 3vw;
+}
 .dynamic-1 {
     width: 35vw;
-    height: 1vw;
+    height: 2vw;
     background: #0b101d;
 }
 .dynamic-2 {
     width: 35vw;
-    height: 1vw;
+    height: 2vw;
     background: #0b101d;
     margin-top: 2vw;
 }
 .dynamic-3 {
     width: 35vw;
-    height: 1vw;
+    height: 2vw;
     background: #0b101d;
     margin-top: 2vw;
 }
