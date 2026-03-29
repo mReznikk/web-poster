@@ -1,21 +1,16 @@
 /* for cctv */
-
-const cctv = document.getElementById('screen-cctv');
-cctv.addEventListener('click', () => {
-    let randomNumber = Math.floor(Math.random() * 4) + 1;
-    console.log(randomNumber);
-    cctv.className = `screen-cctv-base screen-cctv-image-${randomNumber}`;
-});
+const cctv = document.getElementById('section2-screen-cctv');
+if (cctv) {
+    cctv.addEventListener('click', () => {
+        let randomNumber = Math.floor(Math.random() * 4) + 1;
+        cctv.className = `section2-screen-cctv-base section2-screen-cctv-image-${randomNumber}`;
+    });
+}
 
 /* for running line controller */
-
 const track = document.getElementById('sliderTrack');
 const thumb = document.getElementById('sliderButton');
 const spectrograms = document.querySelectorAll('.spectrogram-img');
-
-console.log('track:', track);
-console.log('thumb:', thumb);
-console.log('spectrograms:', spectrograms);
 
 const stages = [
     { pos: '0%', img: '/images/section4/spectrogramGreen.svg' },
@@ -23,22 +18,27 @@ const stages = [
     { pos: '96%', img: '/images/section4/spectrogramRed.svg' },
 ];
 
-track.addEventListener('click', (e) => {
-    const rect = track.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const ratio = clickX / rect.width;
+if (track) {
+    track.addEventListener('click', (e) => {
+        const rect = track.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const ratio = clickX / rect.width;
 
-    console.log('clicked! ratio:', ratio);
+        let stage;
+        if (ratio < 0.33) stage = stages[0];
+        else if (ratio < 0.66) stage = stages[1];
+        else stage = stages[2];
 
-    let stage;
-    if (ratio < 0.33) stage = stages[0];
-    else if (ratio < 0.66) stage = stages[1];
-    else stage = stages[2];
+        spectrograms.forEach(img => img.src = stage.img);
+    });
+}
 
-    console.log('stage:', stage);
-    console.log("thumb style left = "+ thumb.style.left);
-
-    spectrograms.forEach(img => img.src = stage.img);
-    spectrograms.forEach(img => console.log(img.src));
-
-});
+/* for progress bar */
+const progressBar = document.querySelector('.section5-progress-bar');
+if (progressBar) {
+    progressBar.addEventListener('click', () => {
+        progressBar.classList.remove('active');
+        void progressBar.offsetWidth;
+        progressBar.classList.add('active');
+    });
+}
