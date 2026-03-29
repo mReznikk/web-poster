@@ -401,3 +401,12 @@ body {
     color: #ffffff;
     font-size: 2vw;
 }
+
+.section7-character-animation {
+    width: 20vw;
+    height: 30vw;
+    background-image: url('../images/animframe1.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
