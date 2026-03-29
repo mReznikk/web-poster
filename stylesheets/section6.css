@@ -1,0 +1,150 @@
+.section6 {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 75vw;
+    display: flex;
+}
+
+.section6-puzzle {
+    width: 100%;
+    height: 31vw;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.section6-puzzle img {
+    position: absolute;
+    cursor: grab;
+}
+
+.puzzle-frame {
+    position: absolute;
+    height: 31vw;
+    top: 0;        
+    left: 0;
+    width: 100%;
+    z-index: -1;   
+    pointer-events: none; 
+}
+
+
+.drop1,
+.puzzle1 {
+    width: 17.56vw;
+}
+
+.drop2,
+.puzzle2 {
+    width: 11.11vw;
+}
+
+.drop3,
+.puzzle3 {
+    width: 21.38vw;
+}
+
+.drop4,
+.puzzle4 {
+    width: 22.77vw;
+}
+
+.drop5,
+.puzzle5 {
+    width: 12.84vw;
+}
+
+.drop6,
+.puzzle6 {
+    width: 7.98vw;
+}
+
+.puzzle1 {
+    transform: rotate(-9.4deg);
+    left: 4%;
+}
+
+.puzzle2 {
+    transform: rotate(3deg);
+    left: 26%;
+}
+
+.puzzle3 {
+    transform: rotate(0deg);
+    left: 44%;
+}
+
+.puzzle4 {
+    transform: rotate(40deg);
+    left: 63%;
+}
+
+.puzzle5 {
+    transform: rotate(0deg);
+    left: 84%;
+}
+
+.puzzle6 {
+    transform: rotate(-25.5deg);
+    left: 30%;
+}
+
+.puzzle1,
+.puzzle2,
+.puzzle3,
+.puzzle4,
+.puzzle5,
+.puzzle6{
+    top: 28vw;
+}
+
+.puzzle-drop div {
+    height: 24.65vw;
+    background-color: black;
+}
+
+.puzzle-drop {
+    display: flex;
+}
+
+.image {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.drop1.image {
+    background-image: url('../images/section6/puzzlepart1.png');
+}
+
+.drop2.image {
+    background-image: url('../images/section6/puzzlepart2.png');
+}
+
+.drop3.image {
+    background-image: url('../images/section6/puzzlepart3.png');
+}
+
+.drop4.image {
+    background-image: url('../images/section6/puzzlepart4.png');
+}
+
+.drop5.image {
+    background-image: url('../images/section6/puzzlepart5.png');
+}
+
+.drop6.image {
+    background-image: url('../images/section6/puzzlepart6.png');
+}
+
+.section-6-green-grid {
+    position: absolute;
+    width: 100%;
+    z-index: -1;  /* behind everything */
+    bottom: 0;    /* adjust to position it */
+    left: 0;
+    pointer-events: none;
+}

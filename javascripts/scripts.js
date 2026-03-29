@@ -6,6 +6,13 @@ if (cctv) {
         cctv.className = `section2-screen-cctv-base section2-screen-cctv-image-${randomNumber}`;
     });
 }
+/* for cd spinning*/
+const cdDisk = document.querySelector('.cd-disk');
+if (cdDisk) {
+    cdDisk.addEventListener('click', () => {
+        cdDisk.classList.toggle('spinning');
+    });
+}
 
 /* for running line controller */
 const track = document.getElementById('sliderTrack');
@@ -42,3 +49,39 @@ if (progressBar) {
         progressBar.classList.add('active');
     });
 }
+/* for puzzle */
+
+function dragAndDropPuzzle() {
+    const puzzle = document.querySelectorAll('.puzzle')
+    const drops = document.querySelectorAll('.puzzle-drop div')
+    const btn = document.querySelector('.drop-play-button')
+    let cnt = 0
+
+    puzzle.forEach((puzzle) => {
+        puzzle.addEventListener('dragstart', (event) => {
+            event.dataTransfer.setData('text/plain', event.target.classList[1])
+        })
+    })
+    drops.forEach((container) => {
+        container.addEventListener('dragover', (event) => {
+            event.preventDefault()
+        })
+        container.addEventListener('drop', (event) => {
+            event.preventDefault()
+            const puzzleClass = event.dataTransfer.getData('text/plain')
+            const dropClass = puzzleClass.replace('puzzle', 'drop')
+            const drop = document.querySelector(`.${dropClass}`)
+            const drag = document.querySelector(`.${puzzleClass}`)
+
+            drop.classList.add('image')
+            drag.style.display = 'none'
+            cnt++
+
+            if (cnt == 6) {
+                btn.style.display = 'block'
+            }
+        })
+    })
+}
+
+dragAndDropPuzzle();
