@@ -137,6 +137,8 @@ body {
     display: flex;
     position: absolute;
     flex-direction: row;
+    padding-top: 9vw;
+    padding-left: 8vw;
     gap: 3vw;
 }
 .buttons {
@@ -153,6 +155,7 @@ body {
     cursor: pointer;
 }
 
+
 .lamp-icons {
     display: flex;
     gap: 2vw;
@@ -164,6 +167,15 @@ body {
     gap: 2vw;
     justify-content: space-between;
 
+}
+
+.lamp-icons img {
+    width: 9vw;
+    height: 9vw;
+}
+.group-buttons-sec2 img{
+    width: 5vw;
+    height: 15vw;
 }
 .section3 {
     margin: 0 auto;
@@ -257,6 +269,10 @@ body {
     position: relative;
     padding-top: 1vw;
 }
+.buttons-player img {
+    height: 9vw; 
+    width: 9vw;
+}
 .background-sec-4::after {
     content: "";
     position: absolute;
@@ -290,7 +306,7 @@ body {
 
 .buttons-section-4 img {
     width: 9vw;
-    height: 10vw;
+    height: 9vw;
 }
 
 .wave-line {
