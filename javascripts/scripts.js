@@ -155,15 +155,15 @@ function dragAndDropPuzzle() {
     let cnt = 0
 
     puzzle.forEach((puzzle) => {
-        puzzle.addEventListener('dragstart', (event) => {
+        puzzle.addEventListener('dragstart touchstart', (event) => {
             event.dataTransfer.setData('text/plain', event.target.classList[1])
         })
     })
     drops.forEach((container) => {
-        container.addEventListener('dragover', (event) => {
+        container.addEventListener('dragover touchmove', (event) => {
             event.preventDefault()
         })
-        container.addEventListener('drop', (event) => {
+        container.addEventListener('drop touchend', (event) => {
             event.preventDefault()
             const puzzleClass = event.dataTransfer.getData('text/plain')
             const dropClass = puzzleClass.replace('puzzle', 'drop')
