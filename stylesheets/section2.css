@@ -1,0 +1,99 @@
+.section2 {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 46vw;
+    display: flex;
+}
+
+.section2-box {
+    display: flex;
+    margin: 0 auto;
+    height: 46vw;
+    gap: 3vw;
+}
+
+.section2-background-image {
+    height: 47vw;
+    width: 100%;
+    padding-left: 3vw;
+    padding-bottom: 1.5vw;
+}
+
+.section2-screen {
+    display: flex;
+    width: 61vw;
+    height: 38vw;
+    background-image: url(/images/screenbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+}
+
+.section2-screen-cctv-base {
+    width: 51vw;
+    height: 29vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 3.5vw;
+    margin-right: 2vw;
+}
+
+.section2-screen-cctv-image-1 {
+    background-image: url(/images/section2/camera1.png);
+}
+
+.section2-screen-cctv-image-2 {
+    background-image: url(/images/section2/camera2.png);
+}
+
+.section2-screen-cctv-image-3 {
+    background-image: url(/images/section2/camera3.png);
+}
+.section2-screen-cctv-image-4 {
+    background-image: url(/images/section2/camera4.png);
+}
+
+.section2-box-internal {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    padding-top: 9vw;
+    padding-left: 8vw;
+    gap: 3vw;
+}
+.section2-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14.5vw;
+}
+
+.section2-buttons button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.section2-lamp-icons {
+    display: flex;
+    gap: 2vw;
+}
+
+.section2-group-buttons {
+    position: relative;
+    display: flex;
+    gap: 2vw;
+    justify-content: space-between;
+
+}
+
+.section2-lamp-icons img {
+    width: 9vw;
+    height: 9vw;
+}
+.section2-group-buttons img{
+    width: 5vw;
+    height: 15vw;
+}
