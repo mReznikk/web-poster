@@ -4,7 +4,6 @@
     width: 100%;
     height: 80vw;
     display: flex;
-
     padding-top: 8.5vw;
 }
 
@@ -19,12 +18,12 @@
 }
 
 .section5-background-image {
-
     height: 75vw;
     width: 110%;
     padding-bottom: 1.5vw;
     margin-left: -2vw;
     padding-right: 9vw;
+        z-index: -2;
 }
 
 .section5-screen {
@@ -45,7 +44,6 @@
     padding-top: 9vw;
     padding-left: 12vw;
     gap: 7vw;
-
 }
 
 .section5-buttons {
@@ -128,7 +126,6 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5vw;
-
     margin-left: 11vw;
 }
 
@@ -182,7 +179,6 @@
     height: 26vw;
 }
 
-
 .section5-radar-sweep {
     position: absolute;
     top: 0;
@@ -198,7 +194,6 @@
     pointer-events: none;
     transition: transform 0.1s linear;
 }
-
 
 .section5-led-display {
     position: absolute;

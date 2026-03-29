@@ -24,14 +24,12 @@
 
 .puzzle-frame {
     position: absolute;
-    height: 31vw;
-    top: 0;        
-    left: 0;
+    height: 40vw;
+    padding-top: 10vw;
     width: 100%;
-    z-index: -1;   
-    pointer-events: none; 
+    z-index: -1;
+    pointer-events: none;
 }
-
 
 .drop1,
 .puzzle1 {
@@ -109,6 +107,7 @@
 
 .puzzle-drop {
     display: flex;
+    padding-top: 10vw;
 }
 
 .image {
@@ -149,5 +148,6 @@
     pointer-events: none;
 }
 .section-6-green-grid-image {
-    width: 100%
+    width: 100%;
+    height: 40vw;
 }

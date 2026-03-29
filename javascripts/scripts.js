@@ -211,17 +211,3 @@ function dragAndDropPuzzle() {
     })
 }
 dragAndDropPuzzle();
-
-const sprite = document.querySelector('.sprite-animation');
-if (sprite) {
-    const frames = [
-        '/images/animframe1.svg',
-        '/images/animFrame2.svg'
-    ];
-    let currentFrame = 0;
-
-    setInterval(() => {
-        currentFrame = currentFrame === 0 ? 1 : 0;
-        sprite.style.backgroundImage = `url('${frames[currentFrame]}')`;
-    }, 2000); // 2000ms = 2 seconds
-}
