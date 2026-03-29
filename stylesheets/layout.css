@@ -13,7 +13,7 @@ body {
     flex-direction: column;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    /* background-image: url("../images/layout.png"); */
+
     background-repeat: no-repeat;
     background-size: 100% auto;
     z-index: -2;

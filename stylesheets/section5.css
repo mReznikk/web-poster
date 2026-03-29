@@ -31,7 +31,7 @@
     display: flex;
     width: 61vw;
     height: 38vw;
-    background-image: url(/images/screenbg.png);
+    background-image: url(../images/screenbg.png);
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: center;
