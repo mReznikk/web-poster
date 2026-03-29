@@ -259,6 +259,29 @@ body {
     pointer-events: none; 
     z-index: 1; 
 }
+
+.buttons-section-4 {
+    display: flex;
+    gap: 1vw;
+    position: absolute;
+    right: 2vw;
+    top: 2vw;
+    padding-right: 4vw;
+    z-index: 2
+}
+
+.buttons-section-4 button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.buttons-section-4 img {
+    width: 9vw;
+    height: 10vw;
+}
+
 .wave-line {
     overflow: hidden;
     width: 100%;
@@ -281,6 +304,26 @@ body {
     to   { transform: translateX(-50%); }
 }
 
+.wave-ruler {
+    position: relative;
+    width: 100%;
+    height: 4vw; 
+    cursor: pointer;
+    z-index: 2;
+}
+
+.slider-button {
+    position: absolute;
+    left: 0%;
+    top: 0;              
+    transition: left 0.3s ease;
+    z-index: 2;
+}
+
+.slider-button img {
+    width: 4vw;
+    height: 4vw;
+}
 
 /* .background-sec-5 {
     width: 94vw;
