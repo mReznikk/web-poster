@@ -42,18 +42,21 @@ if (cdDisk) {
     });
 }
 /* play/stop buttons*/
+
 const playBtn = document.querySelector('.btn-play img');
+const cDDisk = document.querySelector('.cd-disk');
 let isPlaying = false;
 
-playBtn.addEventListener('click', () => {
+function togglePlay() {
     isPlaying = !isPlaying;
-    playBtn.src = isPlaying 
-        ? './images/section3/pauseButton.svg' 
+    playBtn.src = isPlaying
+        ? './images/section3/pauseButton.svg'
         : './images/section3/playButton.svg';
-    
-    // Toggle CD spin
-    document.querySelector('.cd-disk').classList.toggle('spinning', isPlaying);
-});
+    cdDisk.classList.toggle('spinning', isPlaying);
+}
+
+playBtn.addEventListener('click', togglePlay);
+cdDisk.addEventListener('click', togglePlay);
 
 /* music*/
 var music = new Audio('/sounds/sound.mp3');
@@ -64,6 +67,43 @@ if (btnSoundOn) {
         music.play();
     });
 }
+
+const playBtnn = document.querySelector('.btn-play img');
+const dynamics = document.querySelector('.dynamics');
+let isPlayingNow = false;
+let noteInterval = null;
+
+function spawnNote() {
+    const note = document.createElement('img');
+    note.src = './images/section3/musicnotes.svg';
+    note.classList.add('flying-note');
+
+    const randomY = Math.random() * 8; 
+    note.style.top = randomY + 'vw';
+    note.style.left = '0';
+
+    dynamics.appendChild(note);
+
+    setTimeout(() => note.remove(), 1500);
+}
+
+playBtnn.addEventListener('click', () => {
+    isPlayingNow = !isPlayingNow;
+    playBtnn.src = isPlayingNow
+        ? './images/section3/pauseButton.svg'
+        : './images/section3/playButton.svg';
+
+    document.querySelector('.cd-disk').classList.toggle('spinning', isPlayingNow);
+
+    if (isPlayingNow) {
+        spawnNote(); 
+        noteInterval = setInterval(spawnNote, 400);
+    } else {
+        clearInterval(noteInterval);
+        noteInterval = null;
+        document.querySelectorAll('.flying-note').forEach(n => n.remove());
+    }
+});
 
 var btnSoundOff = document.querySelector('.btn-sound-off');
 if (btnSoundOff) {
