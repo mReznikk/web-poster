@@ -76,7 +76,7 @@ document.querySelector('.btn-play').addEventListener('click', togglePlay);
 CDDisk.addEventListener('click', togglePlay);
 
 /* music*/
-var music = new Audio('/sounds/song.mp3');
+var music = new Audio('./sounds/song.mp3');
 music.volume = 0.2;
 
 var btnSoundOn = document.querySelector('.btn-sound-on');
