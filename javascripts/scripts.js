@@ -35,13 +35,6 @@ if (lampOn && lampOff && cctvScreen) {
     });
 }
 /* for cd spinning*/
-// const CDisk = document.querySelector('.cd-disk');
-// if (CDisk) {
-//     CDisk.addEventListener('click', () => {
-//         CDisk.classList.toggle('spinning');
-//     });
-// }
-// /* play/stop buttons*/
 
 const playBtn = document.querySelector('.btn-play img');
 const CDDisk = document.querySelector('.cd-disk');
@@ -104,32 +97,6 @@ function spawnNote() {
 
     setTimeout(() => note.remove(), 1500);
 }
-
-// playBtnn.addEventListener('click', () => {
-//     isPlayingNow = !isPlayingNow;
-//     playBtnn.src = isPlayingNow
-//         ? './images/section3/pauseButton.svg'
-//         : './images/section3/playButton.svg';
-
-//     document.querySelector('.cd-disk').classList.toggle('spinning', isPlayingNow);
-
-//     if (!isPlayingNow) {
-//         spawnNote(); 
-//         noteInterval = setInterval(spawnNote, 400);
-//     } else {
-//         clearInterval(noteInterval);
-//         noteInterval = null;
-//         document.querySelectorAll('.flying-note').forEach(n => n.remove());
-//     }
-// });
-
-// var btnSoundOff = document.querySelector('.btn-sound-off');
-// if (btnSoundOff) {
-//     btnSoundOff.addEventListener('click', function () {
-//         music.pause();
-//         music.currentTime = 0;
-//     });
-// }
 /* for running line controller */
 var track = document.querySelector('.wave-ruler');
 const thumb = document.getElementById('sliderButton');
