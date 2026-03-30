@@ -44,30 +44,25 @@ if (lampOn && lampOff && cctvScreen) {
 // /* play/stop buttons*/
 
 const playBtn = document.querySelector('.btn-play img');
-const cDDisk = document.querySelector('.cd-disk');
+const CDDisk = document.querySelector('.cd-disk');
 let isPlaying = false;
 
 function togglePlay() {
     isPlaying = !isPlaying;
     playBtn.src = isPlaying
-        ? './images/section3/pauseButton.svg'
-        : './images/section3/playButton.svg';
-    CDisk.classList.toggle('spinning', isPlaying);
-        // playBtnn.src = isPlayingNow
-        // ? './images/section3/pauseButton.svg'
-        // : './images/section3/playButton.svg';
+        ? './images/section3/playButton.svg'
+        : './images/section3/pauseButton.svg';
+    CDDisk.classList.toggle('spinning', isPlaying);
 
-    // document.querySelector('.cd-disk').classList.toggle('spinning', isPlayingNow);
-
-    if (!isPlayingNow) {
-        spawnNote(); 
+    if (isPlaying) {
+        spawnNote();
         noteInterval = setInterval(spawnNote, 400);
     } else {
         clearInterval(noteInterval);
         noteInterval = null;
         document.querySelectorAll('.flying-note').forEach(n => n.remove());
     }
-};
+}
 
 var btnSoundOff = document.querySelector('.btn-sound-off');
 if (btnSoundOff) {
@@ -77,8 +72,8 @@ if (btnSoundOff) {
     });
 }
 
-playBtn.addEventListener('click', togglePlay);
-CDisk.addEventListener('click', togglePlay);
+document.querySelector('.btn-play').addEventListener('click', togglePlay);
+CDDisk.addEventListener('click', togglePlay);
 
 /* music*/
 var music = new Audio('/sounds/song.mp3');
@@ -101,7 +96,7 @@ function spawnNote() {
     note.src = './images/section3/musicnotes.svg';
     note.classList.add('flying-note');
 
-    const randomY = Math.random() * 8; 
+    const randomY = Math.random() * 8;
     note.style.top = randomY + 'vw';
     note.style.left = '0';
 
@@ -136,7 +131,7 @@ function spawnNote() {
 //     });
 // }
 /* for running line controller */
-var track = document.querySelector('.wave-ruler'); /* TKTK */
+var track = document.querySelector('.wave-ruler');
 const thumb = document.getElementById('sliderButton');
 const spectrograms = document.querySelectorAll('.spectrogram-img');
 
@@ -238,7 +233,7 @@ function dragAndDropPuzzle() {
             btn.style.display = 'block'
         }
     }
-/* desktop drag */
+    /* desktop drag */
     puzzles.forEach(function (p) {
         p.addEventListener('dragstart', function (e) {
             e.dataTransfer.setData('text/plain', e.target.classList[1])
@@ -252,7 +247,7 @@ function dragAndDropPuzzle() {
         })
     })
 
-/* touch */
+    /* touch */
     puzzles.forEach(function (p) {
         p.addEventListener('touchstart', function (e) {
             draggedClass = e.target.classList[1]
