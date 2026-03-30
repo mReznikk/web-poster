@@ -35,13 +35,13 @@ if (lampOn && lampOff && cctvScreen) {
     });
 }
 /* for cd spinning*/
-const cdDisk = document.querySelector('.cd-disk');
-if (cdDisk) {
-    cdDisk.addEventListener('click', () => {
-        cdDisk.classList.toggle('spinning');
-    });
-}
-/* play/stop buttons*/
+// const CDisk = document.querySelector('.cd-disk');
+// if (CDisk) {
+//     CDisk.addEventListener('click', () => {
+//         CDisk.classList.toggle('spinning');
+//     });
+// }
+// /* play/stop buttons*/
 
 const playBtn = document.querySelector('.btn-play img');
 const cDDisk = document.querySelector('.cd-disk');
@@ -52,11 +52,33 @@ function togglePlay() {
     playBtn.src = isPlaying
         ? './images/section3/pauseButton.svg'
         : './images/section3/playButton.svg';
-    cdDisk.classList.toggle('spinning', isPlaying);
+    CDisk.classList.toggle('spinning', isPlaying);
+        // playBtnn.src = isPlayingNow
+        // ? './images/section3/pauseButton.svg'
+        // : './images/section3/playButton.svg';
+
+    // document.querySelector('.cd-disk').classList.toggle('spinning', isPlayingNow);
+
+    if (!isPlayingNow) {
+        spawnNote(); 
+        noteInterval = setInterval(spawnNote, 400);
+    } else {
+        clearInterval(noteInterval);
+        noteInterval = null;
+        document.querySelectorAll('.flying-note').forEach(n => n.remove());
+    }
+};
+
+var btnSoundOff = document.querySelector('.btn-sound-off');
+if (btnSoundOff) {
+    btnSoundOff.addEventListener('click', function () {
+        music.pause();
+        music.currentTime = 0;
+    });
 }
 
 playBtn.addEventListener('click', togglePlay);
-cdDisk.addEventListener('click', togglePlay);
+CDisk.addEventListener('click', togglePlay);
 
 /* music*/
 var music = new Audio('/sounds/song.mp3');
@@ -88,31 +110,31 @@ function spawnNote() {
     setTimeout(() => note.remove(), 1500);
 }
 
-playBtnn.addEventListener('click', () => {
-    isPlayingNow = !isPlayingNow;
-    playBtnn.src = isPlayingNow
-        ? './images/section3/pauseButton.svg'
-        : './images/section3/playButton.svg';
+// playBtnn.addEventListener('click', () => {
+//     isPlayingNow = !isPlayingNow;
+//     playBtnn.src = isPlayingNow
+//         ? './images/section3/pauseButton.svg'
+//         : './images/section3/playButton.svg';
 
-    document.querySelector('.cd-disk').classList.toggle('spinning', isPlayingNow);
+//     document.querySelector('.cd-disk').classList.toggle('spinning', isPlayingNow);
 
-    if (isPlayingNow) {
-        spawnNote(); 
-        noteInterval = setInterval(spawnNote, 400);
-    } else {
-        clearInterval(noteInterval);
-        noteInterval = null;
-        document.querySelectorAll('.flying-note').forEach(n => n.remove());
-    }
-});
+//     if (!isPlayingNow) {
+//         spawnNote(); 
+//         noteInterval = setInterval(spawnNote, 400);
+//     } else {
+//         clearInterval(noteInterval);
+//         noteInterval = null;
+//         document.querySelectorAll('.flying-note').forEach(n => n.remove());
+//     }
+// });
 
-var btnSoundOff = document.querySelector('.btn-sound-off');
-if (btnSoundOff) {
-    btnSoundOff.addEventListener('click', function () {
-        music.pause();
-        music.currentTime = 0;
-    });
-}
+// var btnSoundOff = document.querySelector('.btn-sound-off');
+// if (btnSoundOff) {
+//     btnSoundOff.addEventListener('click', function () {
+//         music.pause();
+//         music.currentTime = 0;
+//     });
+// }
 /* for running line controller */
 var track = document.querySelector('.wave-ruler'); /* TKTK */
 const thumb = document.getElementById('sliderButton');
