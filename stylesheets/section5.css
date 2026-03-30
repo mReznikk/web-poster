@@ -101,15 +101,6 @@
     background: #2EE897;
 }
 
-.section5-progress-bar.active::before {
-    animation: progress 3s forwards;
-}
-
-@keyframes progress {
-    to {
-        height: calc(100% - 2vw);
-    }
-}
 .section5-progress-bar-image {
      width: 8vw;
     height: 61.5vw;
