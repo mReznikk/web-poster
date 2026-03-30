@@ -1,9 +1,15 @@
 .cd-disk.spinning {
     animation-play-state: running;
 }
+
 @keyframes cd-disk {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .flying-note {
@@ -15,9 +21,20 @@
 }
 
 @keyframes fly-note {
-    0%   { transform: translate(0, 0) rotate(0deg);        opacity: 1; }
-    50%  { transform: translate(8vw, -4vw) rotate(20deg);  opacity: 0.8; }
-    100% { transform: translate(15vw, -9vw) rotate(45deg); opacity: 0; }
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(8vw, -4vw) rotate(20deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(15vw, -9vw) rotate(45deg);
+        opacity: 0;
+    }
 }
 
 .wave-ruler {
